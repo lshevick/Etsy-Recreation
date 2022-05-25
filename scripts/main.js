@@ -13,8 +13,10 @@ const symbol = document.querySelector('.currency-symbol');
 // need to write function to insert correct currency symbol depending on what the 
 // currency is. E.G
 
-// need to get search bar input and filter the results from
-// the data.results object, then only display those
+
+
+
+// Search bar function
 
 function searchItems() {
     const items = document.querySelectorAll('.item-card');
