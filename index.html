@@ -22,21 +22,20 @@
 <body>
 
     <div class="container">
-        <div class="card-container">
+        <div class="card-container row gx-2">
 
         </div>
     </div>
 
     <script id="item-template" type="text/x-handlebars-template">
        
-       <div class="testing">
-
-           <div class="card">
-               {{#each results}}
-               <h3>{{this.title}}</h3>
-               {{/each}}
+        {{#each results}}
+        <div class="card col-lg-4 p-5">
+            <img src="{{this.Images.0.url_570xN}}" alt="">
+               <h3 class="text-nowrap overflow-hidden">{{this.title}}</h3>
+               
             </div>
-        </div>
+               {{/each}}
     </script>
 
 </body>
