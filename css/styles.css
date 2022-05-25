@@ -27,6 +27,10 @@ body {
   display: none;
 }
 
+.fa-burger, .fa-magnifying-glass {
+  color: #aaa;
+}
+
 /* CSS */
 .button-38 {
   background-color: #FFFFFF;
