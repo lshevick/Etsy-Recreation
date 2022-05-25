@@ -7,7 +7,6 @@ const html = template(context); // are you passing in an object or an array
 
 
 document.querySelector('.card-container').innerHTML = html;
-console.log(html);
 
 
 // need to write a function or helper that will fill an item card

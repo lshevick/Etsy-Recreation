@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,32 +8,48 @@
     <title>Etsy Recreation</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="./css/styles.css">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"
         defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+    <script src="https://kit.fontawesome.com/06fcfb2e20.js" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
         integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-        <script src="./scripts/data.js" defer></script>
-        <script src="./scripts/main.js" defer></script>
+    <script src="./scripts/data.js" defer></script>
+    <script src="./scripts/main.js" defer></script>
 </head>
 
 <body>
 
     <div class="container">
-        <div class="card-container row gx-2">
+        <div class="card-container row justify-content-center">
 
         </div>
     </div>
 
     <script id="item-template" type="text/x-handlebars-template">
-       
+
         {{#each results}}
-        <div class="card col-lg-4 p-5">
-            <img src="{{this.Images.0.url_570xN}}" alt="">
-               <h3 class="text-nowrap overflow-hidden">{{this.title}}</h3>
-               
+        <div class="card col-lg-2 col-md-3 m-1 p-2">
+            <div class="img-wrapper overflow-hidden">
+                <img src="{{this.Images.0.url_570xN}}" width="100%" alt="{{tags}}">
+            </div>
+               <p class="text-nowrap overflow-hidden">{{this.title}}</p>
+
+               <div class="rating-wrapper">
+                   <span class="rating-stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                   </span>
+                   <span class="view-num">
+                       ({{this.views}})
+                   </span>
+               </div>
+
+               <div class="seller-name-wrapper mt-1">
+                   <p>{{this.user_id}}</p>
+               </div>
+
             </div>
                {{/each}}
     </script>
