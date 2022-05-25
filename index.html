@@ -22,20 +22,36 @@
 
 <body>
 
-    <div class="container">
+    <div class="container-xxlg">
+
+        <nav class="navbar navbar-expand-xl navbar-dark bg-light">
+            <a id="brand-name" class="navbar-brand" href="#">Etsy</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation"><i class="fa-solid fa-burger"></i></button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <form class="d-flex my-2 my-lg-0">
+                    <input class="form-control me-sm-2" id="searchbox" type="text" placeholder="Search">
+                    <button class="btn btn-outline-light m-2 my-sm-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+        </nav>
+
+
         <div class="card-container row justify-content-center">
 
         </div>
     </div>
 
+
+<!-- HANDLEBARS TEMPLATE FOR ETSY ITEMS -->
     <script id="item-template" type="text/x-handlebars-template">
 
         {{#each results}}
-        <div class="card col-lg-2 col-md-3 m-1 p-2">
+        <div class="item-card col-lg-2 col-md-3 m-1 p-2">
             <div class="img-wrapper overflow-hidden">
                 <img src="{{this.Images.0.url_570xN}}" width="100%" alt="{{tags}}">
             </div>
-               <p class="text-nowrap overflow-hidden">{{this.title}}</p>
+               <p class=" item-title text-nowrap overflow-hidden">{{this.title}}</p>
 
                <div class="rating-wrapper">
                    <span class="rating-stars">
@@ -48,6 +64,17 @@
 
                <div class="seller-name-wrapper mt-1">
                    <p>{{this.user_id}}</p>
+               </div>
+
+               <div class="price-wrapper mt-0">
+                   <p>
+                       <span class="price-value"><b>${{price}}</b></span>
+                       <span class="price-currency">{{currency_code}}</span>
+                    </p>
+               </div>
+
+               <div class="button-wrapper">
+                   <button class="add-cart-btn button-38"><i class="fa-solid fa-plus"></i> Add to cart</button>
                </div>
 
             </div>
